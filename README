@@ -1,14 +1,15 @@
-1. Install IGV from the website https://igv.org/doc/desktop/#DownloadPage/ 
-2. Install STAR on the command line using the command 'wget https://github.com/alexdobin/STAR/archive/refs/tags/2.7.9a.tar.gz' and follow the instructions in the README. 
-3. Install biopython on the command line using the command 'pip install biopython'
-4. Install samtools on the commandline using the command 'sudo apt-get install samtools'
-
-1. Copy the program star_alignment.py from the repo alz_risk_analysis into the directory STAR-2.7.9a/source
-2. To generate each alignment, replace the value of the variable mRNA seq id with each of the following PSEN1 mRNA transcript IDs: NM_000021.4, NM_007318.3, XM_047431602.1, XM_047431601.1, XM_054376417.1, XM_054376413.1, XM_054376415.1, XM_054376420.1, XM_005267866.3, XM_005267864.4    
-4. Run the program on the command line with the command 'python3 star_alignment.py'. The program will create a directory called 'star_output'. 
-5. The star_output directory will have a file titled 'ouput_Aligned.sortedbyCoord.out.bam' containing the alignment. On the command line, type the command 'samtools index output_Aligned.sortedbyCoord.out.bam' to generate another file in the directory star_output called 'output_Aligned.sortedbyCoord.out.bam.bai'
-6. Open the directory containing igv and type the command './igv.sh' into the command line to open the IGV application. 
-7. In IGV, click Genomes, and then click 'Load Genome from UCSC GenArk'. Select the GCF_000001405.40 genome.
-8. Click File, select Load from File, and load the file 'output_Aligned.sortedbyCoord.out.bam.bai' from the star_output directory. 
-9. Type in the gene of your mRNA transcript into the search bar in IGV. 
-10. Use the + and - buttons in the top right of IGV to navigate to the alignment. Once you have located the alignment, click on it to view the CIGAR, alignment score, and additional information about the alignment.  
+1. Download IGV version 2.18.0 from the website https://data.broadinstitute.org/igv/projects/downloads/2.18/
+2. Go to your downloads directory and unzip the downloaded IGV file on the command line using the command 'unzip IGV_2.18.0.zip'
+3. Go to the release notes for STAR 2.7.9a at https://github.com/alexdobin/STAR/releases/tag/2.7.9a and download the zip source code file.    
+4. Go to your downloads directory and unzip the STAR 2.7.9a source code file using the command 'unzip STAR-2.7.9a.zip' on the command line.    
+5. Install biopython on the command line using the command 'pip install biopython'
+6. Install samtools on the commandline using the command 'sudo apt-get install samtools'
+7. Copy the program star_alignment.py from the repo alz_risk_analysis into the directory STAR-2.7.9a/source
+8. To generate each alignment, replace the value of the variable mRNA seq id with each of the following PSEN1 mRNA transcript IDs: NM_000021.4, NM_007318.3, XM_047431602.1, XM_047431601.1, XM_054376417.1, XM_054376413.1, XM_054376415.1, XM_054376420.1, XM_005267866.3, XM_005267864.4    
+9. Run the program on the command line with the command 'python3 star_alignment.py'. The program will create a directory called 'star_output'. 
+10. The star_output directory will have a file titled 'ouput_Aligned.sortedbyCoord.out.bam' containing the alignment. On the command line, type the command 'samtools index output_Aligned.sortedbyCoord.out.bam' to generate another file in the directory star_output called 'output_Aligned.sortedbyCoord.out.bam.bai'
+11. Open the directory IGV_2.18.0 and type the command './igv.sh' into the command line to open the IGV application. 
+12. In IGV, click Genomes, and then click 'Load Genome from UCSC GenArk'. Select the GCF_000001405.40 genome.
+13. Click File, select Load from File, and load the file 'output_Aligned.sortedbyCoord.out.bam' from the star_output directory. The alignment bam file will show up as a track at the bottom of the application.  
+14. Type PSEN1 into the search bar in IGV to navigate to the PSEN1 gene on the genome. 
+15. Use the + and - buttons in the top right of IGV to navigate to the alignment. Once you have located the alignment, click on it to view the CIGAR, alignment score, and additional information about the alignment.  
